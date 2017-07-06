@@ -1,0 +1,51 @@
+Express server listening on port 3000
+[90mGET /project/50fef396fd8371bc0f000003 [36m304 [90m160ms[0m
+[90mGET /stylesheets/style2.css [36m304 [90m11ms[0m
+[90mGET /stylesheets/description.css [36m304 [90m11ms[0m
+[90mGET /javascripts/jquery.js [36m304 [90m3ms[0m
+[90mGET /javascripts/script2.js [36m304 [90m5ms[0m
+[90mGET /uploads/dcddc029ae2929eed731f30b2cd08d6b.jpg [36m304 [90m2ms[0m
+[90mGET /uploads/7deabcc24fe780f582d32b09ca13530e.jpg [36m304 [90m4ms[0m
+[90mGET /uploads/bb1b3a8dc24c86e2c9574919aee5adbb.jpg [36m304 [90m2ms[0m
+[90mGET /uploads/7b2e71b5a5eda1d515ad02ef02d1d1e1.jpg [36m304 [90m3ms[0m
+[90mGET /project/51003003ef3eff4f04000003 [36m304 [90m120ms[0m
+[90mGET /stylesheets/style2.css [36m304 [90m4ms[0m
+[90mGET /stylesheets/description.css [36m304 [90m5ms[0m
+[90mGET /javascripts/jquery.js [36m304 [90m5ms[0m
+[90mGET /javascripts/script2.js [36m304 [90m2ms[0m
+[90mGET /uploads/6b8c0e73d48231f6db87101a65d6a02e.jpg [36m304 [90m1ms[0m
+[90mGET /uploads/327b7e1105d4d57748bc092d37866c6f.jpg [36m304 [90m4ms[0m
+[90mGET /uploads/abd3437cbd1f86c4eafc5ad254d9017b.jpg [36m304 [90m1ms[0m
+[90mGET /uploads/d908081fa9ccca90cb3e6c1d1a01e71c.jpg [36m304 [90m2ms[0m
+[90mGET /uploads/51287716deb5969d9b22e6bf2acc166c.jpg [36m304 [90m2ms[0m
+[90mGET /uploads/6b8c0e73d48231f6db87101a65d6a02e.jpg [36m304 [90m2ms[0m
+[90mGET /project/51003003ef3eff4f04000003 [36m304 [90m91ms[0m
+[90mGET /stylesheets/description.css [36m304 [90m7ms[0m
+[90mGET /javascripts/script2.js [36m304 [90m7ms[0m
+[90mGET /stylesheets/style2.css [36m304 [90m7ms[0m
+[90mGET /javascripts/jquery.js [36m304 [90m3ms[0m
+[90mGET /uploads/327b7e1105d4d57748bc092d37866c6f.jpg [36m304 [90m2ms[0m
+[90mGET /uploads/6b8c0e73d48231f6db87101a65d6a02e.jpg [36m304 [90m2ms[0m
+[90mGET /uploads/abd3437cbd1f86c4eafc5ad254d9017b.jpg [36m304 [90m4ms[0m
+[90mGET /uploads/d908081fa9ccca90cb3e6c1d1a01e71c.jpg [36m304 [90m4ms[0m
+[90mGET /uploads/51287716deb5969d9b22e6bf2acc166c.jpg [36m304 [90m2ms[0m
+[90mGET /project/50ff001431c1aacd47000010 [32m200 [90m87ms - 12.29kb[0m
+[90mGET /javascripts/script2.js [36m304 [90m7ms[0m
+[90mGET /javascripts/jquery.js [36m304 [90m7ms[0m
+[90mGET /stylesheets/description.css [36m304 [90m7ms[0m
+[90mGET /stylesheets/style2.css [36m304 [90m8ms[0m
+
+/var/www/virtual/lisat/html/lisatruttmann/node_modules/mongoose/lib/utils.js:419
+        throw err;
+              ^
+TypeError: Cannot read property 'title' of undefined
+    at Promise.exports.project (/var/www/virtual/lisat/html/lisatruttmann/routes/index.js:35:33)
+    at Promise.onResolve (/var/www/virtual/lisat/html/lisatruttmann/node_modules/mongoose/node_modules/mpromise/lib/promise.js:162:8)
+    at Promise.EventEmitter.emit (events.js:96:17)
+    at Promise.emit (/var/www/virtual/lisat/html/lisatruttmann/node_modules/mongoose/node_modules/mpromise/lib/promise.js:79:38)
+    at Promise.fulfill (/var/www/virtual/lisat/html/lisatruttmann/node_modules/mongoose/node_modules/mpromise/lib/promise.js:92:20)
+    at Promise.resolve (/var/www/virtual/lisat/html/lisatruttmann/node_modules/mongoose/lib/promise.js:108:15)
+    at Promise.onResolve (/var/www/virtual/lisat/html/lisatruttmann/node_modules/mongoose/node_modules/mpromise/lib/promise.js:162:8)
+    at Promise.EventEmitter.emit (events.js:96:17)
+    at Promise.emit (/var/www/virtual/lisat/html/lisatruttmann/node_modules/mongoose/node_modules/mpromise/lib/promise.js:79:38)
+    at Promise.fulfill (/var/www/virtual/lisat/html/lisatruttmann/node_modules/mongoose/node_modules/mpromise/lib/promise.js:92:20)

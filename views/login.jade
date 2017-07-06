@@ -1,0 +1,18 @@
+extends layout-login
+
+block content
+  - var divClass = fail.class;
+  #login(class= divClass)
+    - var note = fail.message; 
+    #note  
+      p= note
+    h3.login Lisatruttmann Admin Login
+    form(action='/login/authenticate', method='post')  
+      span User
+      br
+      input(type='text', name='user')#user
+      br
+      span Password
+      br
+      input(type='password', name='password')#pass
+      input(type='submit', value='login').submit

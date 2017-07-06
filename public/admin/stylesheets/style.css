@@ -1,0 +1,79 @@
+body {
+  font: 11px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 10px;
+  background: #ccc;
+}
+
+a {
+  text-decoration: none;
+  color: #444;
+}
+
+.smallFont {
+  font-size: 10px;
+  color: #888;
+}
+
+li.selected {
+  background: #ddd;
+}
+li.selected a{
+  color: #000;
+}
+
+#divProjects {
+  background: white;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 0 20px #666;
+  width: 180px;
+  padding: 5px;
+}
+
+#divProjects ul {
+  padding-left: 5px;
+  text-align: left;
+  list-style: none;
+  font-size: 12px;
+}
+
+#divProjects ul li {
+  margin-top: 3px;
+  border-bottom: 1px dotted #ccc;
+}
+
+#divProjects ul li:hover a {
+  color: #000;
+}
+
+
+a.delete img {
+  position: relative;
+  background: url('../images/delete.gif') no-repeat;
+  width: 10px;
+  height: 10px;
+  float: right;
+  margin-right: 5px;
+}
+
+li.topmenu a {
+  color: #55a;
+}
+
+#logout {
+  position: absolute;
+  bottom: 20px;
+}
+#logout a {
+  color: #ddd;
+  background: #aaa;
+  border: 1px solid #aaa;
+  border-radius: 2px;
+  padding: 2px 3px;
+}
+#logout a:hover {
+  background: #ccf;
+  color: #500;
+  border: 1px solid #666;
+  box-shadow: 0 0 10px #888;
+}

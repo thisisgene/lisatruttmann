@@ -1,0 +1,126 @@
+extends layout
+
+block content
+
+  #divProjects
+    form#projectForm(action='/admin/create', method='post')
+      |projects
+      br
+      span.smallFont add Project
+      br
+      input(type='text', name='title')
+      br
+    - var currentProject
+    p.cat topmenu
+    ul#sortable.projectList
+
+      each project in projects
+        if project._id == currentProjectId
+          - currentProject = project
+  
+        if project.category == true
+          li(data-project-id = project.id, class=(project._id == currentProjectId ? "selected" : "")).ui-state-default.topmenu
+            a(href='/admin/edit/' + project._id)= project.title
+            a.delete(href='/admin/delete/' + project._id, onclick="return confirm('really delete "+project.name+"?')")
+              img.delImg 
+        else
+          li(data-project-id = project.id, class=(project._id == currentProjectId ? "selected" : "")).ui-state-default.works
+            a(href='/admin/edit/' + project._id)= project.title
+            a.delete(href='/admin/delete/' + project._id, onclick="return confirm('really delete "+project.name+"?')")
+              img.delImg
+  #logout
+    a(href='/logout') Logout            
+  #mainContainer
+    form#projectContent(action='/admin/update/' + currentProjectId, method='post')  
+      #projectContainer
+        #titleDiv  
+          span.light Title:  
+          input#projectTitle(type='text', value= currentProject.title, name='title')
+        span.light Name (en):
+        input#projectName(type='text', value= currentProject.name, name='name')
+        span.light Name (de):
+        input#projectName2(type='text', value= currentProject.name2, name='name2')
+        
+        br
+ 
+        #info
+          img(src='/admin/images/info.jpg')
+          #infoBox.draggable
+            h2 info
+            a(href='#', onclick="checkWhichArea()").pasteSub paste submenu at current cursor position.
+            
+        #descContainer
+          #descRightDiv
+            span.smallFont english
+            textarea#translation(name='translationSource')= currentProject.translationSource
+          #descLeftDiv
+            span.smallFont deutsch
+            textarea#description(name='descriptionSource')= currentProject.descriptionSource
+        #content_controls
+          input(type='checkbox', name='category', checked= currentProject.category)
+          |top menu
+          br
+          input(type='checkbox', name='visible', checked= currentProject.visible)
+          |visible
+          br
+          input(type='submit', value='save')
+    #mediaContainer
+      h3 media
+      br
+      |photo
+      ol(data-project-id=currentProject.id).mediaList.mediaImg
+        - var pMedia = currentProject.media
+        each j in pMedia
+          li(data-media-id=j.id).ui-state-default
+            a(href= '../../uploads/' + j.name, title= j.imgDescription).preview= j.originalName 
+            a.delete(href='/admin/delete_media/' + currentProjectId + "/" +j._id)
+              img.delImg 
+      br
+      |video
+      ol(data-project-id=currentProject.id).mediaList.mediaVid
+        - var pVideo = currentProject.video
+        each j in pVideo
+          li(data-media-id=j.id).ui-state-default
+            a.preview= j.name 
+            a.delete(href='/admin/delete_video/' + currentProjectId + "/" +j._id)
+              img.delImg
+      span#mediaUpload.button upload images
+      br
+      br
+      span#mediaVideo.button embed videos
+      br
+      br
+      span#mediaEdit.button edit media
+      
+      #uploadContainer.draggable
+        h3 upload media
+        #dropzoner
+          form(action='/admin/media/' + currentProjectId, method='post', enctype="multipart/form-data", id='mydropzone').dropzone
+        a.closeButton(href='/admin/edit/' + currentProjectId) finished   
+      #videoContainer.draggable
+        form(action='/admin/video/' + currentProjectId, method='post')
+          h3 embed videos
+          p name
+          textarea(name='name')
+          p url
+          textarea(name='url').inputUrl
+          p description
+          textarea(name='description')
+          br
+          input(type='submit', value='save')
+      #mediaEditor.draggable
+        h3 edit media
+        form(action='/admin/imgedit/' + currentProjectId, method='post')  
+          #editImages  
+            - var imgIndex = 0
+            div  
+              each j in pMedia
+                div.imgEdit
+                  input(type='text', name='position' + j.id, value= j.position).imgPosition
+                  span(name='origName')= j.originalName  
+                  img(src='../../uploads/' + j.name)
+                  textarea(name='imgDescription' + j.id)= j.description
+                  - imgIndex ++
+          input(type='submit', value='save')
+
+

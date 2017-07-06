@@ -1,0 +1,234 @@
+#mainContainer {
+  position: absolute;
+  left: 210px;
+  top: 10px;
+  width: 83%;
+  height: 95%;
+  
+}
+
+#projectContainer {
+  padding-top: 5px;
+  position: relative;
+  float: left;
+  border-radius: 5px;
+  box-shadow: 0 0 20px #666;
+  width: 82%;
+  height: 683px;
+  text-align: center;
+  background: white;
+}
+#projectName {
+  position: relative;
+  font-size: 17px;
+  color: #444;
+  width: 28%;
+  margin: 5px 10px 0 auto;
+  border: 1px solid #eee;
+}
+#projectName2 {
+  position: relative;
+  font-size: 17px;
+  color: #444;
+  width: 28%;
+  margin: 5px auto 0 auto;
+  border: 1px solid #eee;
+}
+
+#titleDiv {
+  width: 40%;
+  margin: 0 auto;
+}
+#projectTitle {
+  width: 180px;
+  border: 1px solid #eee;
+}
+span.light {
+  color: #999;
+}
+
+#info {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+#info img {
+  cursor: pointer;
+}
+#infoBox {
+  position: absolute;
+  left: -200px;
+  width: 200px;
+  height: 300px;
+  border: 2px solid #777;
+  border-radius: 3px;
+  display: none;
+  background: #eeeefa;
+  box-shadow: 5px 5px 10px #777;
+  z-index: 2000;
+}
+#descContainer {
+  position: relative;
+}
+
+#descContainer div {
+  position: relative;
+  width: 45%;
+  margin: 18px;
+  padding: 5px 0 10px 0;
+  float: left;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 15px #ccc;
+}
+
+#descContainer div textarea {
+  position: relative;
+  border: 1px solid #bbb;
+  resize: none;
+  width: 85%;
+  height: 460px;
+  margin: 5px 20px;
+}
+
+#mediaContainer {
+  position: relative;
+  margin: 0 10px;
+  padding-top: 5px;
+  float: left;
+  width: 15.5%;
+  height: 683px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 20px #666;
+  text-align: center;
+}
+#mediaContainer ol {
+  text-align: left;
+  cursor: pointer;
+  padding-left: 24px;
+  font-size: 9px;
+}
+#content_controls {
+  clear: both;
+}
+
+.button {
+  position: relative;
+  top: 10px;
+  width: 60px;
+  padding: 2px;
+  border: 1px solid #aaa;
+  border-radius: 2px;
+  background: #ccc;
+  cursor: pointer;
+}
+#uploadContainer {
+  display: none;
+  position: absolute;
+  top: 50px;
+  width: 820px;
+  height: 500px;
+  border: 2px solid #aaa;
+  border-radius: 5px;
+  background: #e5ffe5;
+  box-shadow: 5px 5px 20px #888;
+  right: 180px;
+
+}
+#dropzoner {
+  overflow: auto;
+}
+
+#mediaEditor {
+  display: none;
+  position: absolute;
+  top: 50px;
+  width: 1020px;
+  height: 620px;
+  border: 2px solid #aaa;
+  border-radius: 5px;
+  background: #ffffe5;
+  box-shadow: 5px 5px 20px #888;
+  right: 180px;
+}
+#videoContainer {
+  display: none;
+  position: absolute;
+  top: 50px;
+  width: 320px;
+  height: 360px;
+  border: 2px solid #aaa;
+  border-radius: 5px;
+  background: #e5ffff;
+  box-shadow: 5px 5px 20px #888;
+  right: 180px;
+  overflow: hidden;
+}
+#videoContainer textarea {
+  height: 20px;
+  width: 240px;
+  resize: none;
+}
+#videoContainer .inputUrl {
+  width: 240px;
+  height: 100px;
+}
+#videoContainer input {
+  margin-top: 15px;
+}
+
+div#editImages {
+  position: relative;
+  width: 1020px;
+  height: 540px;
+  overflow: auto;
+}
+div.imgEdit {
+  width: 180px;
+  height: 180px;
+  border: 1px solid #888;
+  float: left;
+  margin: 10px;
+}
+div.imgEdit img {
+  width: 178px;
+  height: 116px;
+}
+div.imgEdit .imgPosition {
+  width: 16px;
+  height: 10px;
+  margin: 1px 1px 1px 1px;
+  float: left;
+  font-size: 8px;
+}
+div.imgEdit textarea {
+  resize: none;
+  width: 170px;
+  height: 36px;
+}
+
+.dropzone {
+  margin: 10px auto;
+  width: 700px;
+  height: 400px;
+  border: 1px solid #999;
+  text-shadow: 2px 2px 4px #efe;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #aca;
+}
+
+a.closeButton {
+  border: 1px solid #aaa;
+  background: #eee;
+  padding: 2px;
+  border-radius: 3px;
+}
+
+p#preview {
+  position: absolute;
+  background: #fdfdfd;
+  box-shadow: 0 0 15px #222;
+  padding: 5px;
+}
+

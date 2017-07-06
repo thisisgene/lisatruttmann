@@ -1,0 +1,55 @@
+div#content_container p {
+  margin: 10px 0;
+  font-size: 11px;
+  line-height: 14px;
+}
+
+div#content h1 {
+  margin: 0;
+  font-size: 11px;
+  font-style: normal;
+}
+div#content h3 {
+  font-style: normal; 
+}
+div#content h4 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  margin: 0; 
+}
+
+div#content a {
+  font-style: normal;
+}
+
+div.allSubs {
+  border-bottom: 20px solid white;
+  position: absolute;
+}
+
+div.sub h1 {
+  cursor: pointer;
+  font-style: normal;
+  text-decoration: underline;
+  line-height: 14px;
+  font-weight: normal;
+  font-size: 11px;
+}
+.trans div.sub h1 {
+  color: #7F7F7F;
+}
+
+div.sub span {
+  padding-bottom: 10px;
+  font-style: normal;
+  display: none;
+}
+
+div.sub {
+  line-height: 14px;
+}
+
+p.desc {
+  margin-top: 3px;
+}

@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  #main
+    #menu
+      #menu_container
+        p#menu_head1.menu_head Lisa Truttmann
+        ul.menu
+          each project in projects
+            if project.category == true && project.visible == true 
+                li
+                  a(href='/project/'+project._id, name='title')= project.title
+        ul.menu
+          li works
+          each project in projects
+            if project.category !== true && project.visible == true
+              li
+                a(href='/project/'+project._id, name='title')= project.title

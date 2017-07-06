@@ -1,0 +1,95 @@
+extends layout
+
+block content
+  each img in currentProject.media
+    if img.description == ":background"
+      body(data-background="/uploads/" + img.name)
+  #main
+    #menu
+      #menu_container
+        p#menu_head1.menu_head Lisa Truttmann
+        ul.menu
+          each project in projects
+            if project.category == true && project.visible == true 
+              li(class=(project == currentProject ? "selected" : ""))
+                a(href='/project/'+project._id, name='title')= project.title
+        ul.menu
+          li.projects projects
+          each project in projects
+            if project.category !== true && project.visible == true
+              li(class=(project == currentProject ? "selected" : ""))
+                a(href='/project/'+project._id, name='title')= project.title
+    #content
+      #content_container
+        #left_content.description
+          if currentProject.name2 == undefined || currentProject.name2 == "" 
+
+            h3.trans= currentProject.name
+          else 
+            h3.trans= currentProject.name2
+          span!= currentProject.translation
+        #right_content.description
+          if currentProject.name !==""  
+            h3(name='name')= currentProject.name
+          span.trans!= currentProject.description
+      #mediaContainer
+        - var iCount = 0
+        - var pMedia = currentProject.media
+        - var vCount = 0
+        - var pVideo = currentProject.video
+        #mediaSelector
+          each j in pMedia    
+            - iCount ++
+          if iCount != 0 
+            a#photo.mediaSelect.activeMenu photo
+          each v in pVideo
+            - vCount ++
+          if vCount != 0    
+            a#video.mediaSelect video
+
+          - iCount = 0
+          - vCount = 0 
+         
+          each i in pMedia
+            if i.description != ":background"
+              - iCount ++
+          if iCount > 1  
+            span#nav
+              a(onclick='prevImg()')#pref.imgNav <
+              
+             
+              span.num 1
+              span /
+              span.count= iCount        
+              a(onclick='nextImg()')#next.imgNav >    
+          each v in pVideo
+            - vCount ++
+          if vCount > 1  
+            span#vNav
+              a(onclick='prevVid()')#prefVid.imgNav <
+
+              span.vNum 1
+              span /
+              span.vCount= vCount              
+              a(onclick='nextVid()')#nextVid.imgNav >
+        #img_container
+
+          #img
+            - iCount = 0
+            each j in pMedia
+              if j.description != ":background"
+                - iCount ++
+                  div(id = 'img' + iCount).hidden  
+                    img(src='../../uploads/' + j.name) 
+                    p.desc= j.description
+        #video_container
+
+          #video
+            - vCount = 0  
+            each w in pVideo
+              - vCount ++
+                div(id='vid' + vCount, class='hidden').videoDiv
+                  p.vName= w.name
+                  div!= w.url
+                    p.vDescription= w.description
+

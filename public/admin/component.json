@@ -1,0 +1,15 @@
+{
+  "name": "boot",
+  "description": "Lisa's website",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "enyo/opentip": "*",
+    "enyo/dropzone": "*"
+  },
+  "scripts": [
+    "index.js",
+    "lib/do-stuff.js",
+    "lib/foo-bar.js"
+  ]
+}

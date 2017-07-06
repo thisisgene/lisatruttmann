@@ -1,0 +1,43 @@
+extends layout
+
+block content
+
+  #divProjects
+    form#projectForm(action='/admin/create', method='post')
+      |projects
+      br
+      span.smallFont add Project
+      br
+      input(type='text', name='title')
+      br
+    - var currentProject
+    p.cat topmenu
+    ul#sortable.projectList
+      li 
+        a(href='/admin/now') NOW
+        a(href='/admin/edit/now/add').addNow add version
+        ul#nowList
+          each project in projects
+            if project.nowVersion == true
+              li
+                a(href='/admin/edit/now/' + project._id)= project.title
+                a.delete(href='/admin/delete/' + project._id)
+                  img.delImg 
+          
+      each project in projects
+        if project._id == currentProjectId
+          - currentProject = project
+  
+        if project.nowVersion !== true
+          if project.category == true
+            li(data-project-id = project.id, class=(project._id == currentProjectId ? "selected" : "")).ui-state-default.topmenu
+              a(href='/admin/edit/' + project._id)= project.title
+              a.delete(href='/admin/delete/' + project._id, onclick="return confirm('really delete "+project.name+"?')")
+                img.delImg 
+          else
+            li(data-project-id = project.id, class=(project._id == currentProjectId ? "selected" : "")).ui-state-default.works
+              a(href='/admin/edit/' + project._id)= project.title
+              a.delete(href='/admin/delete/' + project._id, onclick="return confirm('really delete "+project.name+"?')")
+                img.delImg
+  #logout
+    a(href='/logout') Logout            
