@@ -5,6 +5,8 @@ block content
     if img.description == ":background"
       body(data-background="/uploads/" + img.name)
   #main
+    #mobile_menu
+      h1.mobile-title Lisa Truttmann
     #menu
       #menu_container
         p#menu_head1.menu_head Lisa Truttmann
@@ -22,15 +24,15 @@ block content
     #content
       #content_container
         #left_content.description
-          if currentProject.name2 == undefined || currentProject.name2 == "" 
+          if currentProject.name == undefined || currentProject.name == ""
 
-            h3.trans= currentProject.name
-          else 
             h3.trans= currentProject.name2
+          else 
+            h3.trans= currentProject.name
           span!= currentProject.translation
         #right_content.description
-          if currentProject.name !==""  
-            h3(name='name')= currentProject.name
+          if currentProject.name2 !==""
+            h3(name='name')= currentProject.name2
           span.trans!= currentProject.description
       #mediaContainer
         - var iCount = 0

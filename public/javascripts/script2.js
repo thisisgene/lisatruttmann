@@ -14,44 +14,50 @@ var preload = function(src, callback) {
  
  
 // Example usage:
- 
 
 
-$(document).ready(function(){ 
-  $("#content_container").css("height", $("#left_content").height()+20);
-  //alert($("#left_content").height());
+
+$(document).ready(function(){
+
   $("body").addClass("loading-background");
   var bImage = $("body").data("background");
-   
+
   preload(bImage, function() {
     $("body").addClass("background-loaded");
     $("body").css('backgroundImage','url('+bImage+')');
 
   });
-  $("#left_content a[href^='http://']").prop("target", "_blank");
-  $("#right_content a[href^='http://']").prop("target", "_blank");
+  if (document.documentElement.clientWidth > 921) {
 
-  $("#left_content .sub").wrapAll("<div class='allSubs allSubsLeft'/>");
-  $("#right_content .sub").wrapAll("<div class='allSubs allSubsRight'/>");
-  $("#left_content").css("padding-bottom", "+=" + $(".allSubsLeft").height() + "px");
-  $("#right_content").css("padding-bottom", "+=" + $(".allSubsRight").height() + "px");
-  
+    $("#content_container").css("height", $("#left_content").height()+20);
+    //alert($("#left_content").height());
 
-  $(".sub > h1").click(function(){
-    $(this).parent().toggleClass("divVisible");
-    $(this).siblings().toggle();
+    $("#left_content a[href^='http://']").prop("target", "_blank");
+    $("#right_content a[href^='http://']").prop("target", "_blank");
 
-    //loadImg(currentImg);
-    if ($(this).parent().data("alttitle") == ""){
-      next();  
-    }
-    else {
-      var altTitle = $(this).parent().data("alttitle");
-      var title = $(this).text();
-      $(this).parent().data("alttitle", title);
-      $(this).text(altTitle);
-    };
-  });  
+    $("#left_content .sub").wrapAll("<div class='allSubs allSubsLeft'/>");
+    $("#right_content .sub").wrapAll("<div class='allSubs allSubsRight'/>");
+    $("#left_content").css("padding-bottom", "+=" + $(".allSubsLeft").height() + "px");
+    $("#right_content").css("padding-bottom", "+=" + $(".allSubsRight").height() + "px");
+
+
+    $(".sub > h1").click(function(){
+      $(this).parent().toggleClass("divVisible");
+      $(this).siblings().toggle();
+
+      //loadImg(currentImg);
+      if ($(this).parent().data("alttitle") == ""){
+        next();
+      }
+      else {
+        var altTitle = $(this).parent().data("alttitle");
+        var title = $(this).text();
+        $(this).parent().data("alttitle", title);
+        $(this).text(altTitle);
+      };
+    });
+  }
+
   /*$(".sub > h1").hover(function(){
     if ($(this).hasClass("visible")==false){
       $(this).siblings().toggleClass('visHover');
@@ -74,7 +80,7 @@ $(document).ready(function(){
     $("#vNav").show();
   });
 
-  
+
 
   if($("a#photo").length > 0){
     $("#img").show( function(){loadImg(1)});
@@ -90,7 +96,7 @@ $(document).ready(function(){
 function nextImg(){
   var count = parseInt($(".count").text());
   var num = parseInt($(".num").text());
-  if(num < count){  
+  if(num < count){
     num ++;
   }
   else {
@@ -103,9 +109,9 @@ function nextImg(){
 function prevImg(){
   var count = parseInt($(".count").text());
   var num = parseInt($(".num").text());
-  if(num > 1){  
+  if(num > 1){
     num --;
-    
+
   }
   else {
     num = count;
@@ -114,7 +120,7 @@ function prevImg(){
   loadImg(num);
 }
 
-function loadImg(id){  
+function loadImg(id){
   $(".show").addClass("hide").removeClass("show");
   $("p.desc").addClass("hideP");
   /*var imgTop = $("#content").css("height");
@@ -128,15 +134,15 @@ function loadImg(id){
     $("div#img"+id+">p.desc").show(1);
   });
   currentImg = id;
-  
+
 }
 
 function nextVid(){
   var count = parseInt($(".vCount").text());
   var num = parseInt($(".vNum").text());
-  if(num < count){  
+  if(num < count){
     num ++;
-    
+
   }
   else {
     num = 1;
@@ -148,9 +154,9 @@ function nextVid(){
 function prevVid(){
   var count = parseInt($(".vCount").text());
   var num = parseInt($(".vNum").text());
-  if(num > 1){  
+  if(num > 1){
     num --;
-    
+
   }
   else {
     num = count;

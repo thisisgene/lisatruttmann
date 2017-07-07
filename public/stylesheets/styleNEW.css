@@ -60,6 +60,13 @@ h5 { font-size: 10px; }
 }
 
 
+#mobile_menu {
+  display: none !important;
+}
+#mobile_start {
+  display: none !important;
+}
+
 div#menu {
   font-family: Georgia, serif;
   width: 200px;
@@ -243,16 +250,4 @@ span#imgNav, span#vidNav {
 a.imgNav {
   cursor: pointer;
   color: #7F7F7F;
-}
-
-@media(max-width: 920px) {
-  #menu {
-    display: none;
-  }
-  #content {
-    margin-left: 0 !important;
-  }
-  #content_container * {
-    clear: both;
-  }
 }

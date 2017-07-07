@@ -1,11 +1,17 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style2.css')
-    link(rel='stylesheet', href='/stylesheets/description.css')
 
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(name='description', content='Welcome to the official website of artist Lisa Truttmann.')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title= title
+    link(rel='stylesheet', media="screen and (min-device-width: 921px)", href='/stylesheets/styleNEW.css')
+    link(rel='stylesheet', media="screen and (min-device-width: 921px)", href='/stylesheets/description.css')
+    link(rel='stylesheet', media="screen and (max-device-width: 920px)", href='/stylesheets/styleMobile.css')
     script(src='/javascripts/jquery.js')
     script(src='/javascripts/script2.js')
+
   body
     block content
