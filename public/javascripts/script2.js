@@ -43,7 +43,6 @@ $(document).ready(function(){
 
 
   $(".sub > h1").click(function(){
-    console.log('sub click');
     $(this).parent().toggleClass("divVisible");
     $(this).siblings().toggle();
 
@@ -97,6 +96,7 @@ $(document).ready(function(){
 
   $('.mobile_menu-button').on('click', function() {
     $(this).toggleClass('menu-active');
+    $('.mobile_menu-header').toggleClass('is-open');
     $('.mobile_menu-container').toggleClass('open');
   });
 
