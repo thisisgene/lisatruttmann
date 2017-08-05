@@ -6,7 +6,23 @@ block content
       body(data-background="/uploads/" + img.name)
   #main
     #mobile_menu
-      h1.mobile-title Lisa Truttmann
+      .mobile_menu-header
+        a(href='/').home-link
+          h1.mobile-title Lisa Truttmann
+        .mobile_menu-button
+          span
+      .mobile_menu-container
+        ul.menu
+          each project in projects
+            if project.category == true && project.visible == true
+              li
+                a(href='/project/' + project._id, name='title')= project.title
+        ul.menu
+          li works
+          each project in projects
+            if project.category !== true && project.visible == true
+              li
+                a(href='/project/' + project._id, name='title')= project.title
     #menu
       #menu_container
         p#menu_head1.menu_head Lisa Truttmann

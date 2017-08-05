@@ -4,10 +4,10 @@ block content
   #main
     #mobile_menu
       .mobile_menu-header
-        h1.mobile-title Lisa Truttmann
-        .mobile_menu-button
-          span
-      .mobile_menu-container
+        h1.mobile-title.index Lisa Truttmann
+        //.mobile_menu-button
+        //  span
+      .mobile_menu-container.open
         ul.menu
           each project in projects
             if project.category == true && project.visible == true

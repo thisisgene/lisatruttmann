@@ -27,36 +27,38 @@ $(document).ready(function(){
     $("body").css('backgroundImage','url('+bImage+')');
 
   });
-  if (document.documentElement.clientWidth > 921) {
+  // if (document.documentElement.clientWidth > 921) {
+  var $leftContent = $('#left_content');
+  var $rightContent = $('#right_content');
+  $("#content_container").css("height", $("#left_content").height()+20);
+  //alert($("#left_content").height());
 
-    $("#content_container").css("height", $("#left_content").height()+20);
-    //alert($("#left_content").height());
+  $("#left_content a[href^='http://']").prop("target", "_blank");
+  $("#right_content a[href^='http://']").prop("target", "_blank");
 
-    $("#left_content a[href^='http://']").prop("target", "_blank");
-    $("#right_content a[href^='http://']").prop("target", "_blank");
-
-    $("#left_content .sub").wrapAll("<div class='allSubs allSubsLeft'/>");
-    $("#right_content .sub").wrapAll("<div class='allSubs allSubsRight'/>");
-    $("#left_content").css("padding-bottom", "+=" + $(".allSubsLeft").height() + "px");
-    $("#right_content").css("padding-bottom", "+=" + $(".allSubsRight").height() + "px");
+  $("#left_content .sub").wrapAll("<div class='allSubs allSubsLeft'/>");
+  $("#right_content .sub").wrapAll("<div class='allSubs allSubsRight'/>");
+  $leftContent.css("padding-bottom", "+=" + $(".allSubsLeft").height() + "px");
+  $rightContent.css("padding-bottom", "+=" + $(".allSubsRight").height() + "px");
 
 
-    $(".sub > h1").click(function(){
-      $(this).parent().toggleClass("divVisible");
-      $(this).siblings().toggle();
+  $(".sub > h1").click(function(){
+    console.log('sub click');
+    $(this).parent().toggleClass("divVisible");
+    $(this).siblings().toggle();
 
-      //loadImg(currentImg);
-      if ($(this).parent().data("alttitle") == ""){
-        next();
-      }
-      else {
-        var altTitle = $(this).parent().data("alttitle");
-        var title = $(this).text();
-        $(this).parent().data("alttitle", title);
-        $(this).text(altTitle);
-      };
-    });
-  }
+    //loadImg(currentImg);
+    if ($(this).parent().data("alttitle") == ""){
+      next();
+    }
+    else {
+      var altTitle = $(this).parent().data("alttitle");
+      var title = $(this).text();
+      $(this).parent().data("alttitle", title);
+      $(this).text(altTitle);
+    };
+  });
+  // }
 
   /*$(".sub > h1").hover(function(){
     if ($(this).hasClass("visible")==false){
@@ -90,6 +92,14 @@ $(document).ready(function(){
     $("a#video").addClass("activeMenu");
   };
   loadVid(1);
+
+//  MOBILE
+
+  $('.mobile_menu-button').on('click', function() {
+    $(this).toggleClass('menu-active');
+    $('.mobile_menu-container').toggleClass('open');
+  });
+
 });
 
 
