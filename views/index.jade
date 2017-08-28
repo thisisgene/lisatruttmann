@@ -4,21 +4,25 @@ block content
   #main
     #mobile_menu
       .mobile_menu-header
-        h1.mobile-title.index Lisa Truttmann
-        //.mobile_menu-button
-        //  span
-      .mobile_menu-container.open
-        ul.menu
-          each project in projects
-            if project.category == true && project.visible == true
-              li
-                a(href='/project/' + project._id, name='title')= project.title
-        ul.menu
-          li works
-          each project in projects
-            if project.category !== true && project.visible == true
-              li
-                a(href='/project/' + project._id, name='title')= project.title
+        .mobile_menu-top
+          a(href='/').home-link
+            h1.mobile-title Lisa Truttmann
+          //.mobile_menu-button
+          //  span
+        .mobile_menu-bottom
+          .mobile_menu-container.open
+            .mobile_menu-list
+              ul.menu
+                each project in projects
+                  if project.category == true && project.visible == true
+                    li
+                      a(href='/project/' + project._id, name='title')= project.title
+              ul.menu
+                li works
+                each project in projects
+                  if project.category !== true && project.visible == true
+                    li
+                      a(href='/project/' + project._id, name='title')= project.title
     #menu
 
       #menu_container

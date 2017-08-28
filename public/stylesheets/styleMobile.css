@@ -11,12 +11,33 @@ body {
   background-size: cover;
   background-attachment: fixed;
 }
+body:after {
+  content: " ";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  z-index: -100;
+}
+
+body.background-loaded:after {
+  opacity: 0;
+}
 
 a, a:visited {
   text-decoration: none;
   color: #7f7f7f;
 }
 
+ul {
+  list-style: none;
+}
 
 #menu {
   display: none;
@@ -42,16 +63,39 @@ a, a:visited {
   justify-content: space-between;
   -webkit-align-items: center;
   align-items: center;
+  -webkit-flex-direction: column;
+  flex-direction: column;
   z-index: 100;
 }
 .mobile_menu-header.is-open {
   background: rgba(255, 255, 255, 0.9);
 }
 
+.mobile_menu-top {
+  width: 100%;
+  height: 60px;
+  /*padding: 0 1rem;*/
+  display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+  display: -moz-box;      /* OLD: Firefox (buggy) */
+  display: -ms-flexbox;   /* MID: IE 10 */
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+.mobile_menu-bottom {
+  position: relative;
+  width: 100%;
+}
+
 .mobile_menu-button {
   width: 40px;
   height: 40px;
-  margin-right: .8rem;
+  margin-right: 1.2rem;
   top: 0;
   display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
   display: -moz-box;      /* OLD: Firefox (buggy) */
@@ -125,6 +169,8 @@ a, a:visited {
 .mobile_menu-container {
   position: absolute;
   width: 100vw;
+
+
   max-height: calc(100vh - 60px);
   overflow-y: scroll;
   /*display: -webkit-box;   !* OLD: Safari,  iOS, Android browser, older WebKit browsers.  *!*/
@@ -140,7 +186,7 @@ a, a:visited {
   /*justify-content: center;*/
   background: rgba(255, 255, 255, .95);
 
-  top:60px;
+  /*top: 60px;*/
 
   -webkit-transform: translateY(-120%);
   -moz-transform: translateY(-120%);
@@ -187,6 +233,9 @@ a, a:visited {
 }
 .mobile_menu-list ul li{
   margin: .2rem 0;
+}
+.mobile_menu-list ul li.selected a{
+  color: #111;
 }
 
 #content, #mobile_start {
