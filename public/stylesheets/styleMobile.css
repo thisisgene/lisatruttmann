@@ -30,6 +30,10 @@ body.background-loaded:after {
   opacity: 0;
 }
 
+.noscroll {
+  overflow: hidden;
+}
+
 a, a:visited {
   text-decoration: none;
   color: #7f7f7f;
@@ -52,7 +56,6 @@ ul {
   top: 0;
   width: 100vw;
   height: 60px;
-  background: rgba(255, 255, 255, 0.8);
   text-align: center;
   display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
   display: -moz-box;      /* OLD: Firefox (buggy) */
@@ -72,6 +75,7 @@ ul {
 }
 
 .mobile_menu-top {
+  background: rgba(255, 255, 255, 0.8);
   width: 100%;
   height: 60px;
   /*padding: 0 1rem;*/
@@ -86,15 +90,26 @@ ul {
   align-items: center;
   -webkit-flex-direction: row;
   flex-direction: row;
+  z-index: 100;
 }
+.mobile-index {
+  -webkit-justify-content: center;
+  justify-content: center;
+  text-align: center;
+}
+.mobile-index a h1 {
+  margin: 0
+}
+
 .mobile_menu-bottom {
-  position: relative;
+  position: absolute;
+  top: 0;
   width: 100%;
 }
 
 .mobile_menu-button {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   margin-right: 1.2rem;
   top: 0;
   display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
@@ -112,7 +127,7 @@ ul {
 .mobile_menu-button span, .mobile_menu-button span:before, .mobile_menu-button span:after {
   content: '';
   display: block;
-  height: 3px;
+  height: 2px;
   width: 100%;
   background: #000;
   position: relative;
@@ -124,10 +139,10 @@ ul {
 }
 
 .mobile_menu-button span:before {
-  top: 15px;
+  top: 10px;
 }
 .mobile_menu-button span:after {
-  top: -17px;
+  top: -12px;
 }
 
 .mobile_menu-button.menu-active span {
@@ -154,7 +169,7 @@ ul {
 
 .mobile-title {
   margin: 0 0 0 1rem;
-  font-size: 8vw;
+  font-size: 6.5vw;
 }
 
 @media(max-width: 400px) {
@@ -168,25 +183,15 @@ ul {
 }
 .mobile_menu-container {
   position: absolute;
+
   width: 100vw;
-
-
-  max-height: calc(100vh - 60px);
+  z-index: 90;
+  padding: 60px 0;
+  max-height: 100vh;
+  box-sizing: border-box;
   overflow-y: scroll;
-  /*display: -webkit-box;   !* OLD: Safari,  iOS, Android browser, older WebKit browsers.  *!*/
-  /*display: -moz-box;      !* OLD: Firefox (buggy) *!*/
-  /*display: -ms-flexbox;   !* MID: IE 10 *!*/
-  /*display: -webkit-flex;*/
-  /*display: flex;*/
-  /*-webkit-flex-direction: column;*/
-  /*flex-direction: column;*/
-  /*-webkit-align-items: center;*/
-  /*align-items: center;*/
-  /*-webkit-justify-content: center;*/
-  /*justify-content: center;*/
-  background: rgba(255, 255, 255, .95);
 
-  /*top: 60px;*/
+  background: rgba(255, 255, 255, .95);
 
   -webkit-transform: translateY(-120%);
   -moz-transform: translateY(-120%);
@@ -207,11 +212,11 @@ ul {
   -ms-transform: translateY(0);
   -o-transform: translateY(0);
   transform: translateY(0);
+  overflow-y: scroll;
 }
 
 .mobile_menu-list {
   position: relative;
-
 }
 /*.mobile_menu-list ul:first-child {*/
 

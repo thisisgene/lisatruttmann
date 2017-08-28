@@ -98,6 +98,7 @@ $(document).ready(function(){
     $(this).toggleClass('menu-active');
     $('.mobile_menu-header').toggleClass('is-open');
     $('.mobile_menu-container').toggleClass('open');
+    $('body').toggleClass('noscroll');
   });
 
 });
